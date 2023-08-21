@@ -203,7 +203,7 @@ public class AllPattern {
 
 
         int no =sc.nextInt();
-        int j,i,space=0;
+        int j,i,space;
         for(j=0;j<no;j++){
             for (space=0;space<no-j-1;space++){
                 System.out.print(" ");
