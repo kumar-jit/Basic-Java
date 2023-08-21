@@ -96,16 +96,89 @@ public class AllPattern {
 
          */
 
+//        int no =sc.nextInt();
+//        int j,k;
+//        for(j=1;j<=no;j++){
+//            for (k=j;k>=1;k--){
+//                System.out.print(k);
+//            }
+//            System.out.println();
+//        }
+        //---------------------- End of 5
+
+        /*  Pattern --------------- 6
+                Pattern for N = 4
+                A
+                BC
+                CDE
+                DEFG
+
+         */
+
+//        int no =sc.nextInt();
+//        int j,k,charNo =65;
+//        for(j=1;j<=no;j++){
+//            int printChar = charNo;
+//            for (k=0;k<j;k++){
+//                System.out.print((char)printChar);
+//                printChar ++;
+//            }
+//            System.out.println();
+//            charNo++;
+//        }
+
+        // ----------------------- End of 6
+
+        /*   Pattern ---------------- 7
+                Pattern for N = 5
+                E
+                DE
+                CDE
+                BCDE
+                ABCDE
+         */
+//        int no =sc.nextInt();
+//        int j,k,charNo =64+no;
+//        for(j=1;j<=no;j++){
+//            int printChar = charNo;
+//            for (k=0;k<j;k++){
+//                System.out.print((char)printChar);
+//                printChar ++;
+//            }
+//            System.out.println();
+//            charNo--;
+//        }
+        // ------------------------ End of 7
+
+       /*  Pattern -------------------- 8
+        Pattern for N = 4
+                   1
+                  12
+                 123
+                1234
+        */
+//        int no =sc.nextInt();
+//        int j,i,space=0;
+//        for(j=1;j<=no;j++){
+//            for (space=0;space<no-j;space++){
+//                System.out.print(" ");
+//            }
+//            for(i=1;i<=j;i++){
+//                System.out.print(i);
+//
+//            }
+//            System.out.println();
+//        }
+        // ------------------------- End of 8
+
         int no =sc.nextInt();
-        int j,k;
-        for(j=1;j<=no;j++){
-            for (k=j;k>=1;k--){
-                System.out.print(k);
+        int j,i,space=0;
+        for(;no>0;no--){
+            for(i=1;i<=no;i++){
+                System.out.print(no);
+
             }
             System.out.println();
         }
-        //---------------------- End of 5
-
-
     }
 }
