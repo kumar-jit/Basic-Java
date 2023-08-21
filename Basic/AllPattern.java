@@ -171,12 +171,45 @@ public class AllPattern {
 //        }
         // ------------------------- End of 8
 
+        /*  Pattern --------------------- 9
+            Pattern for no = 4
+            55555
+            4444
+            333
+            22
+            1
+
+         */
+
+//        int no =sc.nextInt();
+//        int j,i,space=0;
+//        for(;no>0;no--){
+//            for(i=1;i<=no;i++){
+//                System.out.print(no);
+//
+//            }
+//            System.out.println();
+//        }
+
+        // ----------------------- End of 9
+        /*
+            Pattern -------------------- 10
+            Pattern for n = 4
+                   *
+                  ***
+                 *****
+                *******
+         */
+
+
         int no =sc.nextInt();
         int j,i,space=0;
-        for(;no>0;no--){
-            for(i=1;i<=no;i++){
-                System.out.print(no);
-
+        for(j=0;j<no;j++){
+            for (space=0;space<no-j-1;space++){
+                System.out.print(" ");
+            }
+            for(i=1;i<=j*2+1;i++){
+                System.out.print('*');
             }
             System.out.println();
         }
