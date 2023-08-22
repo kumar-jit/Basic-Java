@@ -200,18 +200,159 @@ public class AllPattern {
                  *****
                 *******
          */
+//        int no =sc.nextInt();
+//        int j,i,space;
+//        for(j=0;j<no;j++){
+//            for (space=0;space<no-j-1;space++){
+//                System.out.print(" ");
+//            }
+//            for(i=1;i<=j*2+1;i++){
+//                System.out.print('*');
+//            }
+//            System.out.println();
+//        }
+        // ---------------------------- End of 10
 
+    /*  pattern ---------------------- 11
+        Pattern for N = 4
+                    1
+                   232
+                  34543
+                 4567654
+                567898765
+    */
+//        int no =sc.nextInt();
+//        int j,i,k,space;
+//        for(j=0;j<no;j++){
+//            for (space=0;space<no-j-1;space++){
+//                System.out.print(" ");
+//            }
+//            for(i=j+1;i<=j*2+1;i++){
+//                System.out.print(i);
+//            }
+//            i = i-2;
+//            for(;i>j;i--){
+//                System.out.print(i);
+//            }
+//            System.out.println();
+//        }
+        // -------------------------------- End of 11
 
-        int no =sc.nextInt();
-        int j,i,space;
-        for(j=0;j<no;j++){
-            for (space=0;space<no-j-1;space++){
+        /*  pattern ---------------------- 12
+        Pattern for N = 7
+                   *
+                  ***
+                 *****
+                *******
+                 *****
+                  ***
+                   *
+
+         */
+
+//        int no =sc.nextInt();
+//        int j,i,space,half = (no/2 + 1);
+//        for(j=0;j<half;j++){
+//            for (space=0;space<half-j-1;space++){
+//                System.out.print(" ");
+//            }
+//            for(i=1;i<=j*2+1;i++){
+//                System.out.print('*');
+//            }
+//            System.out.println();
+//        }
+//        for (;j<=no;j++){
+//            for (space=j-half;space>=0;space--){
+//                System.out.print(" ");
+//            }
+//            for(i=(no-j-1)*2+1;i>0;i--){
+//                System.out.print('*');
+//            }
+//            System.out.println();
+//        }
+        // ------------------------------ End of 12
+
+        /*  pattern --------------------------- 13
+            Pattern for n = 6
+             *
+             *1*
+             *121*
+             *12321*
+             *1234321*
+             *123454321*
+             *12345654321*
+             *123454321*
+             *1234321*
+             *12321*
+             *121*
+             *1*
+             *
+         */
+//        int no = sc.nextInt();
+//
+//        int row,left,right;
+//        // to print the first * (it's not s consecutive pattern so just printed it)
+//        System.out.println('*');
+//        // top part print
+//        for(row=1;row<=no;row++){
+//
+//            // here printing the starting * for every row (*....)
+//            System.out.print('*');
+//
+//            // this for loop to print left side (*123456)
+//            for (left=1;left<=row;left++){
+//                System.out.print(left);
+//            }
+//            // this for loop to print right side (4321*)
+//            for (right=left-2;right>=1;right--){
+//                System.out.print(right);
+//            }
+//
+//            // here printing the ending * for every row and going to next line (*12345654321*)
+//            System.out.println('*');
+//        }
+//        // after completing the top part row will be n/2+2, that's why deducting 2
+//        row =row-2;
+//
+//        // bottom part print
+//        for (;row>0;row--){
+//
+//            // here printing the starting * for every row (*....)
+//            System.out.print('*');
+//
+//            // this for loop to print left side (*123456)
+//            for (left=1;left<=row;left++){
+//                System.out.print(left);
+//            }
+//
+//            // this for loop to print right side (4321*)
+//            for (right=left-2;right>=1;right--){
+//                System.out.print(right);
+//            }
+//
+//            // here printing the ending * for every row and going to next line (*12345654321*)
+//            System.out.println('*');
+//        }
+//
+//        // to print the last * (it's not s consecutive pattern so just printed it)
+//        System.out.print('*');
+    // -------------------------------------------------- End of 13
+
+        int no = sc.nextInt();
+        int count=0,row;
+        String s = "";
+
+        // here we have to print same line every time with space
+        // so first creating the string
+        for(;count<no;count++){
+            s +="*";
+        }
+        for(row=0;row<no;row++){
+            for(count=0;count<row;count++){
                 System.out.print(" ");
             }
-            for(i=1;i<=j*2+1;i++){
-                System.out.print('*');
-            }
-            System.out.println();
+            System.out.println(s);
         }
+
     }
 }
