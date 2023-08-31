@@ -338,21 +338,65 @@ public class AllPattern {
 //        System.out.print('*');
     // -------------------------------------------------- End of 13
 
-        int no = sc.nextInt();
-        int count=0,row;
-        String s = "";
 
-        // here we have to print same line every time with space
-        // so first creating the string
-        for(;count<no;count++){
-            s +="*";
-        }
-        for(row=0;row<no;row++){
-            for(count=0;count<row;count++){
-                System.out.print(" ");
+    /*  pattern --------------------------- 14
+            Pattern for n = 6
+        ******
+         ******
+          ******
+           ******
+            ******
+             ******
+
+         */
+//        int no = sc.nextInt();
+//        int count=0,row;
+//        String s = "";
+//
+//        // here we have to print same line every time with space
+//        // so first creating the string
+//        for(;count<no;count++){
+//            s +="*";
+//        }
+//        for(row=0;row<no;row++){
+//            for(count=0;count<row;count++){
+//                System.out.print(" ");
+//            }
+//            System.out.println(s);
+//        }
+        //----------------------------- end of 14
+
+//        6
+//                ******
+//                *    *
+//                *    *
+//                *    *
+//                *    *
+//                ******
+
+        int no = sc.nextInt();
+        int row,space;
+        String s = "",s1="";
+        for(int i =1;i<=no;i++){
+            s += "*";
+            if (i==1 || i==no){
+                s1 +="*";
             }
-            System.out.println(s);
+            else {
+                s1 +=" ";
+            }
+        }
+        for(row = 1;row<=no;row++){
+            if(row == 1 || row == no){
+                System.out.println(s);
+            }
+            else {
+                System.out.println(s1);
+            }
+
         }
 
     }
+
+
 }
