@@ -9,7 +9,7 @@ public class SquareRoot {
         Scanner sc = new Scanner(System.in);
 
         int no = sc.nextInt();
-        int count = 0,previousNo=0,currentNo=0;
+        int count = 0;
         while(count<=no/2+1){
             if(count*count == no){
                 System.out.print(count);
