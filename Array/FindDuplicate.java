@@ -1,11 +1,9 @@
-/*      Find Unique
-        ---------
-        You have been given an integer array/list(ARR) of size N. Where N is equal to [2M + 1].
-        Now, in the given array/list, 'M' numbers are present twice and one number is present only once.
-        You need to find and return that number which is unique in the array/list.
+/*      Find Duplicate
+        --------------
+        You have been given an integer array/list(ARR) of size N which contains numbers from 0 to (N - 2). Each number is present at least once. That is, if N = 5, the array/list constitutes values ranging from 0 to 3 and among these, there is a single integer value that is present twice. You need to find and return that duplicate number present in the array.
 
-        Note:
-        Unique element is always present in the array/list according to the given condition.
+        Note :
+        Duplicate number is always present in the given array/list.
 
         Input format :
         The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
@@ -13,7 +11,7 @@
         Second line contains 'N' single space separated integers representing the elements in the array/list.
 
         Output Format :
-        For each test case, print the unique element present in the array.
+        For each test case, print the duplicate element in the array/list.
         Output for every test case will be printed in a separate line.
 
         Constraints :
@@ -24,31 +22,30 @@
 
         Sample Input 1:
         1
-        7
-        2 3 1 6 3 6 2
+        9
+        0 7 2 5 4 7 1 3 6
 
         Sample Output 1:
-        1
+        7
 
         Sample Input 2:
         2
         5
-        2 4 7 2 7
-        9
-        1 3 1 3 6 6 7 10 7
+        0 2 1 3 1
+        7
+        0 3 1 5 4 3 2
 
         Sample Output 2:
-        4
-        10
+        1
+        3
 
  */
 
 package Array;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class FindUnique {
+public class FindDuplicate {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int repeat = sc.nextInt();
@@ -58,24 +55,17 @@ public class FindUnique {
             for(int i = 0;i<arrLength;i++){
                 arr[i] = sc.nextInt();
             }
-            System.out.println(FindUniqueNo(arr));
+            System.out.println(Duplicate(arr));
             repeat --;
         }
     }
-    public static int FindUniqueNo(int[] arr){
-        boolean status = false;
-        int no = 0;
+    public static int Duplicate(int[] arr){
         for(int i=0;i< arr.length;i++){
             for(int j=0;j< arr.length;j++){
                 if(i!=j && arr[i]==arr[j])
-                    status = true;
+                    return arr[i];
             }
-            if(status){
-                status = false;
-                continue;
-            }
-            no = arr[i];
         }
-        return no;
+        return -1;
     }
 }
