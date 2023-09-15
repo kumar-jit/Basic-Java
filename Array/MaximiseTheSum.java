@@ -1,3 +1,8 @@
+/**
+ * @link : https://classroom.codingninjas.com/app/classroom/me/24108/content/586730/offering/9098101/problem/702
+ * @title : Maximise the Sum
+ */
+
 package Array;
 
 import java.util.Scanner;
