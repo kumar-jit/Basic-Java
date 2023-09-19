@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class HighestOccurringCharacter {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println(highestOccuringChar(sc.nextLine()));
+        System.out.println(highestOccurringChar(sc.nextLine()));
     }
-    public static char highestOccuringChar(String str) {
+    public static char highestOccurringChar(String str) {
         //Your code goes here
         if(str.isEmpty())
             return ' ';
