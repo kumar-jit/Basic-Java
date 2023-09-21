@@ -9,17 +9,17 @@ public class ReverseEachWord {
     }
     public static String reverseEachWord(String str) {
         String result = "";
-        String subStr = "";
-        for(int i = 0;i<str.length();i++){
-            if(str.charAt(i)!= ' '){
-                subStr = str.charAt(i) + subStr;
+        String revWord = "";
+        for(int i =0;i<str.length();i++){
+            if(str.charAt(i)==' '){
+                result += revWord + " ";
+                revWord = "";
             }
             else{
-                result += (result.isEmpty())? subStr : (" " + subStr);
-                subStr = "";
+                revWord = str.charAt(i) + revWord;
             }
         }
-        return ( (result.isEmpty())? subStr : ( result + " " + subStr) );
+        return result + revWord;
     }
 
 
