@@ -46,6 +46,8 @@
 package Array;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class FindUnique {
@@ -62,21 +64,36 @@ public class FindUnique {
             repeat --;
         }
     }
+//    public static int FindUniqueNo(int[] arr){
+//        boolean status = false;
+//        int no = 0;
+//        for(int i=0;i< arr.length;i++){
+//            for(int j=0;j< arr.length;j++){
+//                if (i != j && arr[i] == arr[j]) {
+//                    status = true;
+//                    break;
+//                }
+//            }
+//            if(status){
+//                status = false;
+//                continue;
+//            }
+//            no = arr[i];
+//        }
+//        return no;
+//    }
+
+// ------------------  Using HasMap ---------------------------
     public static int FindUniqueNo(int[] arr){
+        Map<Integer,Integer> map = new HashMap<>();
         boolean status = false;
         int no = 0;
         for(int i=0;i< arr.length;i++){
-            for(int j=0;j< arr.length;j++){
-                if (i != j && arr[i] == arr[j]) {
-                    status = true;
-                    break;
-                }
-            }
-            if(status){
-                status = false;
-                continue;
-            }
-            no = arr[i];
+            map.put(arr[i], map.getOrDefault(arr[i],0)+1);
+        }
+        for(Integer e : map.keySet()){
+            if(map.get(e)==1)
+                return e;
         }
         return no;
     }
