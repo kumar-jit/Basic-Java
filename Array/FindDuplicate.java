@@ -43,6 +43,8 @@
 
 package Array;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class FindDuplicate {
@@ -59,12 +61,22 @@ public class FindDuplicate {
             repeat --;
         }
     }
+//    public static int Duplicate(int[] arr){
+//        for(int i=0;i< arr.length;i++){
+//            for(int j=0;j< arr.length;j++){
+//                if(i!=j && arr[i]==arr[j])
+//                    return arr[i];
+//            }
+//        }
+//        return -1;
+//    }
     public static int Duplicate(int[] arr){
-        for(int i=0;i< arr.length;i++){
-            for(int j=0;j< arr.length;j++){
-                if(i!=j && arr[i]==arr[j])
-                    return arr[i];
+        Map<Integer,Integer> hasMap = new HashMap<>();
+        for(int i = 0;i<arr.length;i++){
+            if(hasMap.containsKey(arr[i])){
+                return arr[i];
             }
+            hasMap.put(arr[i],1);
         }
         return -1;
     }
