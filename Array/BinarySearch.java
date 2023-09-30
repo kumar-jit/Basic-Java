@@ -1,5 +1,8 @@
 package Array;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class BinarySearch {
@@ -12,6 +15,8 @@ public class BinarySearch {
             arr[i] = sc.nextInt();
         }
         System.out.println(fBinarySearch(arr,sc.nextInt()));
+        List<int[]> listOfIntArray = new ArrayList<>();
+        System.out.println(Collections.unmodifiableList(listOfIntArray));
 
     }
 
