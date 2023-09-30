@@ -32,7 +32,7 @@
     here instead of printing we put element on that position the print the matrix
  */
 
-package Test3;
+package ClassTest1;
 
 import java.util.Scanner;
 
