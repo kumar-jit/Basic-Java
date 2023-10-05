@@ -41,6 +41,8 @@ public class RotateArray {
 //    }
 
         public static void rotate(int[] arr, int d) {
+            d = d%arr.length;
+            System.out.println(d);
         //Your code goes here
             reverseArray(arr,0,arr.length);
             reverseArray(arr,0,arr.length-d);
