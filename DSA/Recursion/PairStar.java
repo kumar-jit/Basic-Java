@@ -6,8 +6,6 @@ public class PairStar {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println(addStars(sc.next()));
-
-
     }
     public static String addStars(String s) {
         // Write your code here
