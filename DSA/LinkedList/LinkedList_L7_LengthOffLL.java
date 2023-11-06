@@ -4,16 +4,35 @@ import java.util.Scanner;
 
 public class LinkedList_L7_LengthOffLL {
 
-    public static void main(String[] args) {
-        Scanner Sc = new Scanner(System.in);
-        Node<Integer> head = new Node<>(10);
-        Node<Integer> headCopy = head;
-        int length = Sc.nextInt();
-        for(int i = 0;i<length;i++){
-            Node<Integer> temp = new Node<>(Sc.nextInt());
-            head.next = temp;
-            head = temp;
+    public static void printLinkList(Node <Integer> head){
+        while (head!=null){
+            System.out.print(head.data + " ");
+            head = head.next;
         }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Node<Integer> head = new Node<>(1) ;
+        Node<Integer> headCopy = null;
+        while(true){
+            int data = sc.nextInt();
+            if(data!=-1){
+                if(headCopy==null){
+                    headCopy = head;
+                    head.data = data;
+                }else {
+                    Node<Integer> temp = new Node<>(data);
+                    head.next = temp;
+                    head = temp;
+                }
+            }
+            else {
+                break;
+            }
+        }
+        printLinkList(headCopy);
         System.out.println(length(headCopy));
     }
     public static int length(Node head){
