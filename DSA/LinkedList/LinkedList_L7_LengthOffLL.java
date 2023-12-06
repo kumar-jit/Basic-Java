@@ -35,11 +35,10 @@ public class LinkedList_L7_LengthOffLL {
         printLinkList(headCopy);
         System.out.println(length(headCopy));
     }
-    public static int length(Node head){
+    public static int length(Node<Integer> head){
         //Your code goes here
         int count = 0;
         while (head!=null){
-            System.out.println(head.data);
             count++;
             head = head.next;
         }
