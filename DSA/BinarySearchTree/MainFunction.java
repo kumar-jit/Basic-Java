@@ -147,11 +147,41 @@ public class MainFunction {
         preOrder(root.left);
         preOrder(root.right);
     }
+    private static void printLevelWiseAtDiffLevel(BinaryTreeNode<Integer> root) throws QueueEmptyException {
+        if (root == null)
+            return;
+        QueueUsingLL<BinaryTreeNode<Integer>> q = new QueueUsingLL<BinaryTreeNode<Integer>>();
+        q.enqueue(root);
+        q.enqueue(null);
+        while (!q.isEmpty()) {
+            BinaryTreeNode<Integer> first = q.front();
+            q.dequeue();
+            if (first == null) {
+                if (q.isEmpty()) {
+                    break;
+                }
+                System.out.println();
+                q.enqueue(null);
+                continue;
+            }
+            System.out.print(first.data + " ");
+            if (first.left != null) {
+                q.enqueue(first.left);
+            }
+            if (first.right != null) {
+                q.enqueue(first.right);
+            }
+        }
+    }
 
-    public static void main(String[] args) throws IOException {
+
+    public static void main(String[] args) throws IOException, QueueEmptyException {
 //        _BST1_L13_SearchInBST();    // search in BST
 //        _BST1_L13_ElementBetweenK1andK2();   // Elements between K1 and K2
-        _BST1_L13_ConstructBST();   // Construct BST
+//        _BST1_L13_ConstructBST();   // Construct BST
+//        _BST1_L13_BstToLL();    // BST To LL
+//        _BST1_L13_LcaOfBST();   // LCA of BST
+        _BST1_L13_ReplaceWithSumOfGreaterNodes();
 
 
 //        _BST2_L14_FindPathInBST();   // Find Path in BST
@@ -210,6 +240,29 @@ public class MainFunction {
         }
         BinaryTreeNode<Integer> ans = BST1_L13_ConstructBST.SortedArrayToBST(arr, len);
         preOrder(ans);
+    }
+
+    public static void _BST1_L13_BstToLL() throws IOException {
+        BinaryTreeNode<Integer> root = takeInput();
+        LinkedListNode<Integer> head = BST1_L13_BstToLL.constructLinkedList(root);
+        while(head != null) {
+            System.out.print(head.data + " ");
+            head = head.next;
+        }
+    }
+
+    public static void _BST1_L13_LcaOfBST() throws IOException {
+        BinaryTreeNode<Integer> root = takeInput();
+        st = new StringTokenizer(br.readLine());
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
+        System.out.println(BST1_L13_LcaOfBST.getLCA(root, a, b));
+    }
+
+    public static void _BST1_L13_ReplaceWithSumOfGreaterNodes() throws IOException, QueueEmptyException {
+        BinaryTreeNode<Integer> root = takeInput();
+        BST1_L13_ReplaceWithSumOfGreaterNodes.replaceWithLargerNodesSum(root);
+        printLevelWiseAtDiffLevel(root);
     }
 
 
