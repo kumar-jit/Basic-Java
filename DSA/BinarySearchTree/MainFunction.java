@@ -181,11 +181,12 @@ public class MainFunction {
 //        _BST1_L13_ConstructBST();   // Construct BST
 //        _BST1_L13_BstToLL();    // BST To LL
 //        _BST1_L13_LcaOfBST();   // LCA of BST
-        _BST1_L13_ReplaceWithSumOfGreaterNodes();
+//        _BST1_L13_ReplaceWithSumOfGreaterNodes();   // Replace with Sum of Greater Node
 
 
 //        _BST2_L14_FindPathInBST();   // Find Path in BST
 //        _BST2_L14_LevelWiseLinkedList();   // Level wise linked list
+        _BST2_L14_BSTClass();   //bst CLASS
     }
 
 
@@ -263,6 +264,34 @@ public class MainFunction {
         BinaryTreeNode<Integer> root = takeInput();
         BST1_L13_ReplaceWithSumOfGreaterNodes.replaceWithLargerNodesSum(root);
         printLevelWiseAtDiffLevel(root);
+    }
+
+    public static void _BST2_L14_BSTClass() throws IOException {
+        BST2_L14_BSTClass bst = new BST2_L14_BSTClass();
+        int choice, input;
+        int q = Integer.parseInt(br.readLine());
+        while (q-- > 0) {
+            st = new StringTokenizer(br.readLine());
+            choice = Integer.parseInt(st.nextToken());
+            switch (choice) {
+                case 1:
+                    input = Integer.parseInt(st.nextToken());
+                    bst.insert(input);
+                    break;
+                case 2:
+                    input = Integer.parseInt(st.nextToken());
+                    bst.remove(input);
+                    break;
+                case 3:
+                    input = Integer.parseInt(st.nextToken());
+                    System.out.println(bst.search(input));
+                    break;
+                default:
+                    bst.printTree();
+                    break;
+            }
+
+        }
     }
 
 
