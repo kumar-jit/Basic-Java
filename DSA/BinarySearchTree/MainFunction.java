@@ -186,7 +186,8 @@ public class MainFunction {
 
 //        _BST2_L14_FindPathInBST();   // Find Path in BST
 //        _BST2_L14_LevelWiseLinkedList();   // Level wise linked list
-        _BST2_L14_BSTClass();   //bst CLASS
+//        _BST2_L14_BSTClass();   //bst CLASS
+        _BST2_L14_PairSumInBST(); //Pair Sun in a BST
     }
 
 
@@ -292,6 +293,12 @@ public class MainFunction {
             }
 
         }
+    }
+
+    public static void _BST2_L14_PairSumInBST() throws IOException {
+        BinaryTreeNode<Integer> root = takeInput();
+        int s = Integer.parseInt(br.readLine());
+        BST2_L14_PairSumInBST.printNodesSumToS(root,s);
     }
 
 
