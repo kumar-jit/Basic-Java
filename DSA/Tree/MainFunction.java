@@ -111,7 +111,11 @@ public class MainFunction {
     public static void main(String[] args) {
 //        _Trees_L15_SumOfAllNodes();     //Sum of all nodes
 //        _Trees_L15_CountLeafNodes();    //Count leaf nodes
-        _Trees_L15_PostOrderTraversal();
+//        _Trees_L15_PostOrderTraversal();
+//        _Trees_L15_CheckOfGenericTreeContainElement(); // Check if generic tree contain element x
+//        _Trees_L15_NodeHavingSumOfChildrenAndNodeIsMax();   // Node having sum of children and node is max
+//        _Trees_L15_StructurallyIdentical();     // Structurally identical
+        _Trees_L15_NextLargerElement();      // Next larger element
     }
 
 
@@ -127,6 +131,42 @@ public class MainFunction {
     public static void _Trees_L15_PostOrderTraversal() {
         TreeNode<Integer> root = takeInputLevelWise();
         Trees_L15_PostOrderTraversal.printPostOrder(root);
+
+    }
+
+    public static void _Trees_L15_CheckOfGenericTreeContainElement() {
+        int x = s.nextInt();
+        TreeNode<Integer> root =  takeInputLevelWise();
+        System.out.println(Trees_L15_CheckOfGenericTreeContainElement.checkIfContainsX(root, x));
+    }
+
+    public static void _Trees_L15_NodeHavingSumOfChildrenAndNodeIsMax() {
+        TreeNode<Integer> root =  takeInputLevelWise();
+        TreeNode<Integer> ans = Trees_L15_NodeHavingSumOfChildrenAndNodeIsMax.maxSumNode(root);
+        if(ans == null){
+            System.out.println(Integer.MIN_VALUE);
+        }else{
+            System.out.println(ans.data);
+        }
+
+    }
+
+    public static void _Trees_L15_StructurallyIdentical() {
+        TreeNode<Integer> root1 =  takeInputLevelWise();
+        TreeNode<Integer> root2 = takeInputLevelWise();
+        System.out.println(Trees_L15_StructurallyIdentical.checkIdentical(root1, root2));
+    }
+
+    public static void _Trees_L15_NextLargerElement() {
+        int n = s.nextInt();
+        TreeNode<Integer> root =  takeInputLevelWise();
+
+        TreeNode<Integer> ans = Trees_L15_NextLargerElement.findNextLargerNode(root, n);
+        if(ans == null){
+            System.out.println(Integer.MIN_VALUE);
+        }else{
+            System.out.println(ans.data);
+        }
 
     }
 
