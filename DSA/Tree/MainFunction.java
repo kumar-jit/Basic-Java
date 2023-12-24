@@ -108,6 +108,34 @@ public class MainFunction {
         return root;
     }
 
+    public static void printTreeLevelWise(TreeNode<Integer> root){
+        QueueUsingLL<TreeNode<Integer>> pendingNodes = new QueueUsingLL<TreeNode<Integer>>();
+        pendingNodes.enqueue(root);
+        pendingNodes.enqueue(null);
+        while(!pendingNodes.isEmpty()){
+            TreeNode<Integer> currentNode;
+            try {
+                currentNode = pendingNodes.dequeue();
+                if(currentNode==null){
+                    System.out.println();
+                    if(!pendingNodes.isEmpty()){
+                        pendingNodes.enqueue(null);
+                        continue;
+                    }else{
+                        break;
+                    }
+                }
+                System.out.print(currentNode.data+" ");
+                int numChild = currentNode.children.size();
+                for(int i = 0 ; i < numChild; i++){
+                    pendingNodes.enqueue(currentNode.children.get(i));
+                }
+
+            } catch (QueueEmptyException e) {
+            }
+        }
+    }
+
     public static void main(String[] args) {
 //        _Trees_L15_SumOfAllNodes();     //Sum of all nodes
 //        _Trees_L15_CountLeafNodes();    //Count leaf nodes
@@ -115,7 +143,9 @@ public class MainFunction {
 //        _Trees_L15_CheckOfGenericTreeContainElement(); // Check if generic tree contain element x
 //        _Trees_L15_NodeHavingSumOfChildrenAndNodeIsMax();   // Node having sum of children and node is max
 //        _Trees_L15_StructurallyIdentical();     // Structurally identical
-        _Trees_L15_NextLargerElement();      // Next larger element
+//        _Trees_L15_NextLargerElement();      // Next larger element
+//        _Trees_L15_SecondLargestElementInTree();    // Second Largest Element In Tree
+        _Trees_L15_ReplaceNodeWithDepth();      //Replace node with depth
     }
 
 
@@ -168,6 +198,21 @@ public class MainFunction {
             System.out.println(ans.data);
         }
 
+    }
+    public static void _Trees_L15_SecondLargestElementInTree() {
+        TreeNode<Integer> root =  takeInputLevelWise();
+        TreeNode<Integer> ans = Trees_L15_SecondLargestElementInTree.findSecondLargest(root);
+        if(ans == null){
+            System.out.println(Integer.MIN_VALUE);
+        }else{
+            System.out.println(ans.data);
+        }
+    }
+
+    public static void _Trees_L15_ReplaceNodeWithDepth() {
+        TreeNode<Integer> root =  takeInputLevelWise();
+        Trees_L15_ReplaceNodeWithDepth.replaceWithDepthValue(root);
+        printTreeLevelWise(root);
     }
 
 
