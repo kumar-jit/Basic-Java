@@ -110,7 +110,8 @@ public class MainFunction {
 
     public static void main(String[] args) {
 //        _Trees_L15_SumOfAllNodes();     //Sum of all nodes
-        _Trees_L15_CountLeafNodes();    //Count leaf nodes
+//        _Trees_L15_CountLeafNodes();    //Count leaf nodes
+        _Trees_L15_PostOrderTraversal();
     }
 
 
@@ -121,6 +122,12 @@ public class MainFunction {
     public static void _Trees_L15_CountLeafNodes() {
         TreeNode<Integer> root =  takeInputLevelWise();
         System.out.println(Trees_L15_CountLeafNodes.countLeafNodes(root));
+    }
+
+    public static void _Trees_L15_PostOrderTraversal() {
+        TreeNode<Integer> root = takeInputLevelWise();
+        Trees_L15_PostOrderTraversal.printPostOrder(root);
+
     }
 
 
