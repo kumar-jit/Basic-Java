@@ -147,7 +147,8 @@ public class MainFunction {
 //        _Trees_L15_SecondLargestElementInTree();    // Second Largest Element In Tree
 //        _Trees_L15_ReplaceNodeWithDepth();      //Replace node with depth
 //        _Trees_L15_FindHeight();    // Find Height
-        _Trees_L15_NumberOfNodesGreaterThanX();
+//        _Trees_L15_NumberOfNodesGreaterThanX();     // find node greater than x
+        _Trees_L15_PrintTreeLevelWise();
 
     }
 
@@ -227,6 +228,11 @@ public class MainFunction {
         int x = s.nextInt();
         TreeNode<Integer> root =  takeInputLevelWise();
         System.out.println(Trees_L15_NumberOfNodesGreaterThanX.numNodeGreater(root, x));
+    }
+
+    public static void _Trees_L15_PrintTreeLevelWise() {
+        TreeNode<Integer> root =  takeInputLevelWise();
+        Trees_L15_PrintTreeLevelWise.printLevelWise(root);
     }
 
 
