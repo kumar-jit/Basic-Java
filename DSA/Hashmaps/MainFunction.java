@@ -3,6 +3,8 @@ package DSA.Hashmaps;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 public class MainFunction {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -32,10 +34,18 @@ public class MainFunction {
         System.out.println();
     }
 
+    public static void printArray(ArrayList<Integer> arr) {
+        for (int element : arr) {
+            System.out.print(element + " ");
+        }
+
+        System.out.println();
+    }
+
     public static void main(String[] args) throws NumberFormatException, IOException {
 //        _Hashmaps_L16_MaximumFrequencyNumber();
-        _Hashmaps_L16_PrintIntersection();
-
+//        _Hashmaps_L16_PrintIntersection();
+        _Hashmaps_L16_LongestConsecutiveSequence();
 
 
     }
@@ -56,5 +66,12 @@ public class MainFunction {
 
             t -= 1;
         }
+    }
+
+    public static void _Hashmaps_L16_LongestConsecutiveSequence() throws NumberFormatException, IOException {
+        int[] arr = takeInput();
+        ArrayList<Integer> ans = Hashmaps_L16_LongestConsecutiveSequence.longestConsecutiveIncreasingSequence(arr);
+        printArray(ans);
+
     }
 }
