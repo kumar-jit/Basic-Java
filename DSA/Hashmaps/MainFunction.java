@@ -1,12 +1,16 @@
+
+
 package DSA.Hashmaps;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 public class MainFunction {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static StringTokenizer st;
 
     public static int[] takeInput() throws IOException {
         int size = Integer.parseInt(br.readLine().trim());
@@ -24,6 +28,11 @@ public class MainFunction {
         }
 
         return input;
+    }
+
+    public static String takeInputString() throws IOException {
+        String str = br.readLine();
+        return str;
     }
 
     public static void printArray(int[] arr) {
@@ -45,8 +54,9 @@ public class MainFunction {
     public static void main(String[] args) throws NumberFormatException, IOException {
 //        _Hashmaps_L16_MaximumFrequencyNumber();
 //        _Hashmaps_L16_PrintIntersection();
-        _Hashmaps_L16_LongestConsecutiveSequence();
+//        _Hashmaps_L16_LongestConsecutiveSequence();
 
+        _Hashmaps_L16_ExtractUniqueCharacters();
 
     }
 
@@ -73,5 +83,26 @@ public class MainFunction {
         ArrayList<Integer> ans = Hashmaps_L16_LongestConsecutiveSequence.longestConsecutiveIncreasingSequence(arr);
         printArray(ans);
 
+    }
+
+    public static void _Hashmaps_L16_ExtractUniqueCharacters() throws NumberFormatException, IOException {
+
+
+        String str = takeInputString();
+        System.out.print(Hashmaps_L16_ExtractUniqueCharacters.uniqueChar(str));
+
+
+    }
+
+    public static void _Hashmap_L16_PairsWithDifferenceK() throws NumberFormatException, IOException {
+        st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int arr[] = new int[n];
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
+        int k = Integer.parseInt(br.readLine());
+        System.out.println(Hashmap_L16_PairsWithDifferenceK.getPairsWithDifferenceK(arr, k));
     }
 }
