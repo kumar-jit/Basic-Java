@@ -56,7 +56,9 @@ public class MainFunction {
 //        _Hashmaps_L16_PrintIntersection();
 //        _Hashmaps_L16_LongestConsecutiveSequence();
 
-        _Hashmaps_L16_ExtractUniqueCharacters();
+//        _Hashmaps_L16_ExtractUniqueCharacters();
+
+        _Hashmap_L16_LongestSubArrayZeroSum();
 
     }
 
@@ -104,5 +106,16 @@ public class MainFunction {
         }
         int k = Integer.parseInt(br.readLine());
         System.out.println(Hashmap_L16_PairsWithDifferenceK.getPairsWithDifferenceK(arr, k));
+    }
+
+    public static void _Hashmap_L16_LongestSubArrayZeroSum() throws NumberFormatException, IOException {
+        st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int arr[] = new int[n];
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
+        System.out.println(Hashmap_L16_LongestSubArrayZeroSum.lengthOfLongestSubsetWithZeroSum(arr));
     }
 }
