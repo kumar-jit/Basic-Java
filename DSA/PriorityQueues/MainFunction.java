@@ -8,7 +8,8 @@ public class MainFunction {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) throws NumberFormatException, IOException {
 //        _PriorityQueues_L17_RemoveMin();
-        _PriorityQueues_L16_MaxPriorityQueue();
+//        _PriorityQueues_L16_MaxPriorityQueue();
+        _PriorityQueues2_L18_InPlaceHeapSort();
     }
 
 
@@ -79,6 +80,21 @@ public class MainFunction {
             }
             //choice = Integer.parseInt(st.nextToken());
             choice = sc.nextInt();
+        }
+    }
+    public static void _PriorityQueues2_L18_InPlaceHeapSort() throws NumberFormatException, IOException {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] input = new int[n];
+        for (int i = 0; i < n; i++) {
+            input[i] = sc.nextInt();
+        }
+
+        PriorityQueues2_L18_InPlaceHeapSort.inplaceHeapSort(input);
+        for (int i : input) {
+            System.out.print(i + " ");
         }
     }
 }
