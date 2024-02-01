@@ -22,6 +22,7 @@ public class mainFunction {
 //        _Recursion3_A_ReturnPermutationOfAString();
 //        _Recursion3_A_PrintPermutationOfString();\
 //        _Recursion3_A_PrintSubsetSumToK();
+        _Recursion3_A_GetUniqueSubset();
     }
 
     public static void _Recursion3_L_PrintKeypadString() {
@@ -82,6 +83,11 @@ public class mainFunction {
         int[] input = takeInput();
         int k = s.nextInt();
         Recursion3_A_PrintSubsetSumToK.printSubsetsSumTok(input, k);
+    }
+
+    public static void _Recursion3_A_GetUniqueSubset() {
+        int[] input = takeInput();
+        Recursion3_A_GetUniqueSubset.printSubsets(input);
     }
 
 }
