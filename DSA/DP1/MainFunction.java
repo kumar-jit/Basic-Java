@@ -10,8 +10,6 @@ public class MainFunction {
     public static void main(String[] args) throws IOException, NumberFormatException{
         _DP1_L_MinStepsToOneUsingDP();
     }
-
-
     public static void _DP1_L_MinStepsToOneUsingDP() throws NumberFormatException, IOException {
         int n = Integer.parseInt(br.readLine().trim());
         System.out.println(DP1_L_MinStepsToOneUsingDP.countMinStepsToOne(n));
